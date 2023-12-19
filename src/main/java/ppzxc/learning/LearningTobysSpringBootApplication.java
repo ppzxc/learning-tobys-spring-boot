@@ -1,7 +1,6 @@
 package ppzxc.learning;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,11 +22,10 @@ public class LearningTobysSpringBootApplication {
 
     // Servlet Container
     TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
-    WebServer webServer = serverFactory.getWebServer(servletContext -> {
-      servletContext.addServlet("frontcontroller", new HttpServlet() {
+    WebServer webServer = serverFactory.getWebServer(
+      servletContext -> servletContext.addServlet("frontcontroller", new HttpServlet() {
         @Override
-        protected void service(HttpServletRequest req, HttpServletResponse resp)
-          throws ServletException, IOException {
+        protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
           if (req.getRequestURI().equals("/hello") && req.getMethod().equals(HttpMethod.GET.name())) {
             String name = req.getParameter("name");
 
@@ -40,8 +38,7 @@ public class LearningTobysSpringBootApplication {
             resp.setStatus(HttpStatus.NOT_FOUND.value());
           }
         }
-      }).addMapping("/*");
-    });
+      }).addMapping("/*"));
     webServer.start();
   }
 }
