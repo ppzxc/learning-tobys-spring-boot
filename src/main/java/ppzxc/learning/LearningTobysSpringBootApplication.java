@@ -10,17 +10,21 @@ import ppzxc.learning.service.SimpleHelloService;
 public class LearningTobysSpringBootApplication {
 
   public static void main(String[] args) {
-    // Spring ApplicationContext
-    GenericWebApplicationContext applicationContext = new GenericWebApplicationContext();
+    GenericWebApplicationContext applicationContext = new GenericWebApplicationContext() {
+      @Override
+      protected void onRefresh() {
+        super.onRefresh();
+
+        // Servlet Container
+        TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
+        WebServer webServer = serverFactory.getWebServer(servletContext -> {
+          servletContext.addServlet("dispatcherServlet", new DispatcherServlet(this)).addMapping("/*");
+        });
+        webServer.start();
+      }
+    };
     applicationContext.registerBean(SimpleHelloService.class);
     applicationContext.registerBean(HelloController.class);
     applicationContext.refresh();
-
-    // Servlet Container
-    TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
-    WebServer webServer = serverFactory.getWebServer(
-      servletContext -> servletContext.addServlet("dispatcherServlet", new DispatcherServlet(applicationContext))
-        .addMapping("/*"));
-    webServer.start();
   }
 }
