@@ -11,12 +11,14 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import ppzxc.learning.controller.HelloController;
+import ppzxc.learning.service.SimpleHelloService;
 
 public class LearningTobysSpringBootApplication {
 
   public static void main(String[] args) {
     // Spring ApplicationContext
     GenericApplicationContext applicationContext = new GenericApplicationContext();
+    applicationContext.registerBean(SimpleHelloService.class);
     applicationContext.registerBean(HelloController.class);
     applicationContext.refresh();
 
