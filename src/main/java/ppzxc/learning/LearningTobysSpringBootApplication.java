@@ -1,7 +1,7 @@
 package ppzxc.learning;
 
 import org.springframework.boot.SpringApplication;
-import ppzxc.configuiration.MySpringBootApplication;
+import ppzxc.configuration.MySpringBootApplication;
 
 @MySpringBootApplication
 public class LearningTobysSpringBootApplication {

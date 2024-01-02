@@ -1,4 +1,4 @@
-package ppzxc.configuiration.auto;
+package ppzxc.configuration.auto;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

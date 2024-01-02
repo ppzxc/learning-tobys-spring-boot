@@ -1,4 +1,4 @@
-package ppzxc.configuiration.auto;
+package ppzxc.configuration.auto;
 
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
