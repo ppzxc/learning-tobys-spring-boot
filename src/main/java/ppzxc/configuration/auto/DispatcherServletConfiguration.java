@@ -1,10 +1,10 @@
 package ppzxc.configuration.auto;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.DispatcherServlet;
+import ppzxc.configuration.MyAutoConfiguration;
 
-@Configuration
+@MyAutoConfiguration
 public class DispatcherServletConfiguration {
 
   @Bean
