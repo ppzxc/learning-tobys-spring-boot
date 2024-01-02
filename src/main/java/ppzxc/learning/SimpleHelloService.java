@@ -1,4 +1,4 @@
-package ppzxc.learning.service;
+package ppzxc.learning;
 
 import org.springframework.stereotype.Service;
 
