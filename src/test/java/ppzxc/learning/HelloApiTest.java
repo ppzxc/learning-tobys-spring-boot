@@ -33,4 +33,17 @@ public class HelloApiTest {
     assertThat(actual.getHeaders().getFirst(HttpHeaders.CONTENT_TYPE)).startsWith(MediaType.TEXT_PLAIN_VALUE);
     assertThat(actual.getBody()).isEqualTo("Hello %s".formatted(given));
   }
+
+  @Test
+  void should_return_exception_when_input_null() {
+    // given
+    String given = "";
+
+    // when
+    ResponseEntity<String> actual = rest.getForEntity("http://localhost:8080/hello?name={name}", String.class,
+      given);
+
+    // then
+    assertThat(actual.getStatusCode()).isEqualByComparingTo(HttpStatus.INTERNAL_SERVER_ERROR);
+  }
 }
