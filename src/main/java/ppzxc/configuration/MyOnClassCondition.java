@@ -10,7 +10,7 @@ public class MyOnClassCondition implements Condition {
 
   @Override
   public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-    Map<String, Object> annotationAttributes = metadata.getAnnotationAttributes(ConditionalOnClass.class.getName());
+    Map<String, Object> annotationAttributes = metadata.getAnnotationAttributes(ConditionalMyOnClass.class.getName());
     return ClassUtils.isPresent((String) annotationAttributes.get("value"), context.getClassLoader());
   }
 }

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Conditional;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Conditional(MyOnClassCondition.class)
-public @interface ConditionalOnClass {
+public @interface ConditionalMyOnClass {
 
   String value();
 }
