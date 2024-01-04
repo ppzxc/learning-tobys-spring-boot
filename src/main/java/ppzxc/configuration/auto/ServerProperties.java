@@ -1,5 +1,8 @@
 package ppzxc.configuration.auto;
 
+import ppzxc.configuration.MyConfigurationProperties;
+
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
 
   private String contextPath = "";
