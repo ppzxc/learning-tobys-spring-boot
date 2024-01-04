@@ -24,8 +24,7 @@ public class DataSourceConfiguration {
     return dataSource;
   }
 
-  @Bean
-  public DataSource hikariDataSource(MyDataSourceProperties myDataSourceProperties) {
-    HikariDataSource hikariDataSource = new HikariDataSource();
-  }
+//  @Bean
+//  public DataSource hikariDataSource(MyDataSourceProperties myDataSourceProperties) {
+//  }
 }

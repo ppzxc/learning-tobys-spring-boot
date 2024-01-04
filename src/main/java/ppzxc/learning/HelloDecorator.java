@@ -15,6 +15,6 @@ public class HelloDecorator implements HelloService {
 
   @Override
   public String sayHello(String name) {
-    return "*%s*".formatted(helloService.sayHello(name));
+    return "*" + helloService.sayHello(name) + "*";
   }
 }

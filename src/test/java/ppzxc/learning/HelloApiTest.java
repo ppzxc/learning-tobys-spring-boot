@@ -31,7 +31,7 @@ public class HelloApiTest {
     // then
     assertThat(actual.getStatusCode()).isEqualByComparingTo(HttpStatus.OK);
     assertThat(actual.getHeaders().getFirst(HttpHeaders.CONTENT_TYPE)).startsWith(MediaType.TEXT_PLAIN_VALUE);
-    assertThat(actual.getBody()).isEqualTo("*Hello %s*".formatted(given));
+    assertThat(actual.getBody()).isEqualTo("*Hello " + given + "*");
   }
 
   @Test
