@@ -25,7 +25,7 @@ public class HelloApiTest {
     String given = "Spring";
 
     // when
-    ResponseEntity<String> actual = rest.getForEntity("http://localhost:8080/hello?name={name}", String.class,
+    ResponseEntity<String> actual = rest.getForEntity("http://localhost:8080/app/hello?name={name}", String.class,
       given);
 
     // then
@@ -40,7 +40,7 @@ public class HelloApiTest {
     String given = "";
 
     // when
-    ResponseEntity<String> actual = rest.getForEntity("http://localhost:8080/hello?name={name}", String.class,
+    ResponseEntity<String> actual = rest.getForEntity("http://localhost:8080/app/hello?name={name}", String.class,
       given);
 
     // then
