@@ -17,10 +17,10 @@ public class TomcatWebServerConfiguration {
 
   @ConditionalOnMissingBean
   @Bean("tomcatWebServerFactory")
-  public ServletWebServerFactory servletWebServerFactory(ServerProperties properties) {
+  public ServletWebServerFactory servletWebServerFactory(ServerProperties serverProperties) {
     TomcatServletWebServerFactory serverFactory = new TomcatServletWebServerFactory();
-    serverFactory.setContextPath(properties.getContextPath());
-    serverFactory.setPort(properties.getPort());
+    serverFactory.setContextPath(serverProperties.getContextPath());
+    serverFactory.setPort(serverProperties.getPort());
     return serverFactory;
   }
 }

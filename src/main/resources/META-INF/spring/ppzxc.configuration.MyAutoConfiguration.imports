@@ -1,3 +1,4 @@
+ppzxc.configuration.auto.DataSourceConfiguration
 ppzxc.configuration.auto.TomcatWebServerConfiguration
 ppzxc.configuration.auto.JettyWebServerConfiguration
 ppzxc.configuration.auto.PropertyPlaceholderConfiguration
