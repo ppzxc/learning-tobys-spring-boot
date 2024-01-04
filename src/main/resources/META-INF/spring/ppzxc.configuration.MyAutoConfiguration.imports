@@ -1,4 +1,5 @@
 ppzxc.configuration.auto.TomcatWebServerConfiguration
 ppzxc.configuration.auto.JettyWebServerConfiguration
 ppzxc.configuration.auto.PropertyPlaceholderConfiguration
+ppzxc.configuration.auto.ServerPropertiesConfiguration
 ppzxc.configuration.auto.DispatcherServletConfiguration
