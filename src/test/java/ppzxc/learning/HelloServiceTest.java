@@ -26,7 +26,17 @@ public class HelloServiceTest {
 
   @FastUnitTest
   void should_return_Hello() {
-    SimpleHelloService service = new SimpleHelloService();
+    SimpleHelloService service = new SimpleHelloService(new HelloRepository() {
+      @Override
+      public Hello findHello(String name) {
+        return null;
+      }
+
+      @Override
+      public void increase(String name) {
+
+      }
+    });
 
     String actual = service.sayHello("Test");
 
