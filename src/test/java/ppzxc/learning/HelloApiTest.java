@@ -4,12 +4,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 public class HelloApiTest {
 
   private TestRestTemplate rest;
@@ -25,7 +28,7 @@ public class HelloApiTest {
     String given = "Spring";
 
     // when
-    ResponseEntity<String> actual = rest.getForEntity("http://localhost:9090/hello?name={name}", String.class,
+    ResponseEntity<String> actual = rest.getForEntity("http://localhost:9090/app/hello?name={name}", String.class,
       given);
 
     // then
@@ -40,7 +43,7 @@ public class HelloApiTest {
     String given = "";
 
     // when
-    ResponseEntity<String> actual = rest.getForEntity("http://localhost:9090/hello?name={name}", String.class,
+    ResponseEntity<String> actual = rest.getForEntity("http://localhost:9090/app/hello?name={name}", String.class,
       given);
 
     // then
